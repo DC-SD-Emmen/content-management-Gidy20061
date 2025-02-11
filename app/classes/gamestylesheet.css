@@ -1,0 +1,179 @@
+body {
+    color: white;
+
+    background-color: rgb(20, 20, 20);
+}
+
+
+#hoofd {
+    text-align: center;
+    font-size: 25px;
+}
+
+
+#hoofd2 {
+    text-align: center;
+    font-size: 25px;
+}
+
+#hoofd2 h1 {
+    color: white;
+    font-weight: bold;
+}
+
+
+#games {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1%;
+    height: 550px;
+
+}
+
+#main-container {
+    display: flex;
+}
+
+
+#library {
+    border-color: blue;
+    margin-left: 15px;
+    flex: 70%;
+    border-radius: 20px;
+    display: grid;
+    background-color: rgb(50, 50, 50);
+    column-gap: 1.5%;
+    row-gap: 20px;
+    grid-column-end: span 3;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+#addgame {
+    flex: 20%;
+    border: solid;
+    border-radius: 20px;
+    border-color: blue;
+    background-color: rgb(50, 50, 50);
+    text-align: center;
+    height: 500px;
+}
+
+
+#game-boxes {
+    width: 200px;
+    height: 200px;
+    border: solid;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 20px;
+    border-color: rgb(82, 168, 244);
+}
+
+
+#game-boxes>h1 {
+    text-align: center;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+#game-Details {
+    border-radius: 25px;
+    height: 550px;
+    text-align: center;
+    background-color: rgb(50, 50, 50);
+    grid-column-end: span 3;
+}
+
+#game-Info {
+    font-size: smaller;
+    margin-top: 40px;
+    text-align: center;
+}
+
+
+
+.game-image {
+    margin-top: 20px;
+    width: 200px
+}
+
+#GameLibrary {
+
+    flex: 70%;
+    display: grid;
+    text-align: center;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: blue;
+    font-size: small;
+}
+
+#photo-size {
+    font-size: small;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: blue;
+    height: 350px;
+    width: 250px;
+}
+
+#addgame-button {
+    border: solid;
+    color: blue;
+    padding: 15px;
+    text-align: center;
+    text-decoration: solid;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+#stylesheet-addgame {
+    flex: 20%;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: solid;
+    border-radius: 20px;
+    border-color: blue;
+    background-color: rgb(50, 50, 50);
+    text-align: center;
+    text-decoration: solid;
+    height: 500px;
+    width: 400px;
+}
+
+#text-stylesheet-add-game {
+    margin-top: 20px;
+    margin-left: 25px;
+    color: blue;
+    border-radius: 20px;
+    width: 300px;
+    padding: 20px;
+}
+
+
+#backbutton-add-game {
+    border: solid;
+    border-radius: 20px;
+    border-color: blue;
+    text-align: center;
+    width: 100px;
+    padding: 10px
+}
+
+
+
+#backbutton-add-game2 {
+    border: solid;
+    border-radius: 20px;
+    border-color: blue;
+    text-align: center;
+    width: 100px;
+}
