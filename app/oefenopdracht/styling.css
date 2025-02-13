@@ -1,0 +1,35 @@
+#container{
+    background-color: blue;
+    padding:5%;
+    margin-left:20%;
+    margin-top: 12%;
+    width: 50%;
+    text-align: center;
+    border: solid black;
+    border-radius: 25px;
+}
+
+#username{
+    width: 400px;
+    height: 50px;
+    margin-top: 10px;
+    border: solid black;
+    border-radius: 25px;
+}
+
+#password{
+    width: 400px;
+    height: 50px;
+    margin-top: 10px;
+    border: solid black;
+    border-radius: 25px;
+}
+
+#styling-log-in{
+    width: 200px;
+    margin-top: 10px;
+    border: solid black;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+}
