@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="styling.css">
 </head>
 <body>
+
 <div id="container">
-  <form method="POST" action="oefenopdracht1-login.php"> <!-- Correct action URL -->
+    <form method="POST" action="oefenopdracht1-login.php"> <!-- Correct action URL -->
     <div id="user">
       <div class="username">
         <label for="username">Username</label>

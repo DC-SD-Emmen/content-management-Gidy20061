@@ -8,6 +8,34 @@
     border: solid black;
     border-radius: 25px;
 }
+#form-container{
+    background-color: blue;
+    padding:5%;
+    margin-left:20%;
+    margin-top: 12%;
+    width: 50%;
+    text-align: center;
+    border: solid black;
+    border-radius: 25px;
+}
+
+#Register-button{
+    width: 200px;
+    margin-top: 10px;
+    border: solid black;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+}
+/*#loginForm{*/
+
+/*    width: 200px;*/
+/*    margin-top: 10px;*/
+/*    border: solid black;*/
+/*    border-radius: 25px;*/
+/*    text-align: center;*/
+/*    padding: 10px;*/
+/*}*/
 
 #username{
     width: 400px;

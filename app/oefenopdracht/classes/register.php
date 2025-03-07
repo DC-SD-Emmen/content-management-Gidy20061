@@ -16,8 +16,8 @@ $userI = ($db->getConnection());
 //if server method request is POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-//if isset login
-    if (isset($_POST['login'])) {
+//if isset register
+    if (isset($_POST['register'])) {
 
 //je kan hier nog regex controle toevoegen
         $username = htmlspecialchars($_POST['username']);

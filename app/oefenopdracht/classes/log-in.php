@@ -4,7 +4,7 @@ use Couchbase\User;
 
 // Autoloader function for loading classes automatically
 spl_autoload_register(function ($class_name) {
-    include 'classes/' . $class_name . '.php';
+    require_once 'classes/' . $class_name . '.php';
 });
 
 $db = new Database();
@@ -17,13 +17,13 @@ $userI = ($db->getConnection());
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 //if isset login
-    if (isset($_POST['login'])) {
+    if (isset($_POST['log-in'])) {
 
 //je kan hier nog regex controle toevoegen
         $username = htmlspecialchars($_POST['username']);
 
         $username = $_POST['username'];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
 
         $userM->insert($username, $password);
     }
@@ -51,10 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <form method="POST" id="loginForm">
 
-        <label for="username">Username: </label>
+<!--        <label for="username">Username: </label>-->
         <input type="text" name="username" id="username">
         <br>
-        <label for="password">Password: </label>
+<!--        <label for="password">Password: </label>-->
         <input type="password" name="password" id="password">
         <br>
         <input type="submit" value="register" id="Register-button" name="login">
@@ -68,3 +68,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 </html>
+

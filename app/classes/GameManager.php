@@ -12,7 +12,6 @@ class GameManager {
         $title = htmlspecialchars($data['title']);
         $genre = htmlspecialchars($data['genre']);
         $platform = htmlspecialchars($data['platform']);
-
         $release_year = htmlspecialchars($data['release_year']);
         $rating = htmlspecialchars($data['rating']);
 
