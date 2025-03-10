@@ -27,6 +27,15 @@
     text-align: center;
     padding: 10px;
 }
+
+#login-button{
+    width: 200px;
+    margin-top: 10px;
+    border: solid black;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+}
 /*#loginForm{*/
 
 /*    width: 200px;*/

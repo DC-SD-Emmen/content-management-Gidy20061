@@ -23,12 +23,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = htmlspecialchars($_POST['username']);
 
         $username = $_POST['username'];
-        $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         $userM->insert($username, $password);
     }
-
-
+//    if (password_verify($password, $userI('password')))
+//        echo "login succes";
+//
+//        header('Location: index.php');
+//    else
+//        echo "login failed";
 
 }
 
@@ -57,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!--        <label for="password">Password: </label>-->
         <input type="password" name="password" id="password">
         <br>
-        <input type="submit" value="register" id="Register-button" name="login">
+        <input type="submit" value="login" id="log-in" name="login">
 
     </form>
 </div>

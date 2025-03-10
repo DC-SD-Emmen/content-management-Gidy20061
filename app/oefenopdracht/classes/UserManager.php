@@ -1,19 +1,19 @@
 <?php
 
 
-    class UserManager {
+    class UserManager
+    {
 
         private $conn;
 
-        public function __construct($conn) {
+        public function __construct($conn)
+        {
             $this->conn = $conn;
         }
 
-        public function insert($username, $password) {
+        public function insert($username, $password)
+        {
 
-            //wat je hier ook nog kan doen, is checken of de user al bestaat of niet.
-
-            //if user al bestaat? geen nieuwe aanmaken
             if ($_POST['username'] == $username) {
                 foreach ($this->conn->query("SELECT * FROM users WHERE username = '$username'") as $row) {
                     if ($row['username'] == $username) {
@@ -22,12 +22,6 @@
                     }
                 }
             }
-
-            //else wel nieuwe user maken.
-            else {
-                echo "New user created";
-            }
-
 
             //try and catch
             try {
@@ -43,8 +37,22 @@
 
         }
 
-//        public function getUser($id)
-//        {
-//
-//        }
+        public function getUser($username)
+        {
+
+            //try and catch
+            try {
+                //stmt prepare
+                $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = ?");
+                $stmt->bindParam(1, $username);
+                $stmt->execute();
+                return $stmt->fetch();
+            }
+            catch (PDOException $e) {
+                echo "Error: " . $e->getMessage();
+            }
+
+
+        }
+
 }
