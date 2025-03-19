@@ -82,4 +82,17 @@
             }
             
         }
+
+        public function dewishlist($user_id, $game_id) {
+            try {
+                $stmt = $this->conn->prepare("DELETE FROM user_games WHERE user_id = ? AND game_id = ?");
+                $stmt->bindParam(1, $user_id);
+                $stmt->bindParam(2, $game_id);
+                $stmt->execute();
+                echo "Record deleted successfully";
+            } catch (PDOException $e) {
+                echo "Error: " . $e->getMessage();
+            }
+        }
 }
+
