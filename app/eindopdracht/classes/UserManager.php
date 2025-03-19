@@ -1,13 +1,41 @@
 <?php
 
-
     class UserManager {
+
+
 
         private $conn;
 
         public function __construct($conn) {
             $this->conn = $conn;
         }
+
+
+        public function userconnect ($user_id, $game_id){
+            echo "$user_id, $game_id";{
+
+                foreach ($this->conn->query("SELECT * FROM user_games WHERE user_id = '$user_id' AND game_id = '$game_id'") as $row) {
+                    if ($row['user_id'] == $user_id && $row['game_id'] == $game_id) {
+                        echo "User already has this game";
+                        return;
+                    }
+                }
+            }
+
+            try {
+                $stmt = $this->conn->prepare("INSERT INTO user_games (user_id, game_id) VALUES (?, ?)");
+                $stmt->bindParam(1, $user_id);
+                $stmt->bindParam(2, $game_id);
+                $stmt->execute();
+                echo "New record created successfully";
+                } 
+                catch (PDOException $e) {
+                    echo "Error: " . $e->getMessage();
+            
+            }
+        }
+
+        
 
         public function insert($username, $password) {
 
@@ -39,16 +67,19 @@
             //try and catch
             try {
                 //stmt prepare
+                //if no user is found, return user is null (in associative array)
+                if($username == null) {
+                    return null;
+                }
                 $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = ?");
                 $stmt->bindParam(1, $username);
                 $stmt->execute();
-                return $stmt->fetch();
+                $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                return $user;
             }
             catch (PDOException $e) {
                 echo "Error: " . $e->getMessage();
             }
-
-
+            
         }
-
 }

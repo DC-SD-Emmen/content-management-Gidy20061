@@ -1,7 +1,12 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['username'])) {
+    header('Location: index.php');
+    exit;
+}
 use Couchbase\User;
+use eindopdracht\classes\Database;
 
 // Autoloader function for loading classes automatically
 spl_autoload_register(function ($class_name) {
@@ -15,6 +20,8 @@ $userM = new UserManager($db->getConnection());
 //if server method request is POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+}
+
 //if isset login
     if (isset($_POST['register'])) {
 //je kan hier nog regex controle toevoegen
@@ -23,12 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $userM->insert($username, $password);
     }
 
-    $Server = $_SERVER['REQUEST_METHOD'];
-    echo $Server;
-    
-    if (isset($_POST['login'])) {
 
-        //username en password uit POST data
+    if (isset($_POST['login'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
@@ -37,17 +40,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         //password verify
         if(password_verify($password, $user['password'])) {
+            $_SESSION['username'] = $username;
+            echo $_SESSION['username'];
             echo "login succes";
         } else {
             echo "login failed";
         }
-
-
+        header('Location: index.php');
+        exit;
     }
 
 
 
-}
+
 
 
 ?>
@@ -93,4 +98,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </body>
 
 
-</html>
+</html>;

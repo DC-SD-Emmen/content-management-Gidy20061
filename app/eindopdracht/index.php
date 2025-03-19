@@ -1,26 +1,56 @@
+<?php
+
+    session_start();
+
+    //if logout is pressed
+    //if server method request is post
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_POST['logout'])) {
+            //sessie variabelen worden leeggemaakt en verwijderd
+            session_unset();
+            //sessie wordt verwijderd
+            session_destroy();
+            header('Location: login.php');
+            exit();
+        }
+    }
+
+    //controleren of session username bestaat en session id
+    if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
+        echo "Welcome " . $_SESSION['username'];
+    } else {
+        header('Location: login.php');
+        exit();
+    }
+
+    spl_autoload_register(function ($class_name) {
+        include 'classes/' . $class_name . '.php';
+    });
+
+    $db = new Database();
+    $gm = new GameManager($db);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Drenthe College docker web server</title>
-       <link rel="stylesheet" href="classes/gamestylesheet.css">
+       <link rel="stylesheet" href="./css/gamestylesheet.css">
+       <link rel="stylesheet" href="./css/styles.css">
     </head>
    
 
 <body>
 
 
-
-    <?php
-
-        spl_autoload_register(function ($class_name) {
-            include 'classes/' . $class_name . '.php';
-        });
-
-        $db = new Database();
-        $gm = new GameManager($db);
-    ?>
+    <div id="logout">
+        <form method="POST">
+            <input type="submit" name="logout" value="logout">
+        </form>
+    </div>
 
 
 
@@ -38,6 +68,7 @@
                 <a href="addgame.php">add game</a>
             </button>
             </div>
+            <a href="wishlist.php">wishlist</a>
         </div>
 
 

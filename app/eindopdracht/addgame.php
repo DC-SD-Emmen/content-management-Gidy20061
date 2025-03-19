@@ -1,31 +1,35 @@
+<?php
+
+    spl_autoload_register(function ($class_name) {
+        include 'classes/' . $class_name . '.php';
+    });
+
+    $db = new Database();
+    $gm = new GameManager($db);
+
+    if ($_SERVER["REQUEST_METHOD"] == 'POST') {
+        // Handle the file upload and store the file path
+        $filePath = $gm->fileuload($_FILES['foto']);
+        // Handle the form data insertion, including the file path
+        $gm->insert($_POST, $_FILES['foto']['name'] );
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="classes/gamestylesheet.css">
+    <link rel="stylesheet" href="./css/gamestylesheet.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
-<?php
-spl_autoload_register(function ($class_name) {
-    include 'classes/' . $class_name . '.php';
-});
-
-$db = new Database();
-$gm = new GameManager($db);
-
-if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-    // Handle the file upload and store the file path
-    $filePath = $gm->fileuload($_FILES['foto']);  
-    // Handle the form data insertion, including the file path
-    $gm->insert($_POST, $_FILES['foto']['name'] );  
-}
-
-?>
 <div id="backbutton-add-game">
-<h1><a href=http://localhost/index.php>
+<h1><a href='./index.php'>
   terug  
 </a> </h1>
 </div>

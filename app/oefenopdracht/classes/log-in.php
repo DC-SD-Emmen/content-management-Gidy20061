@@ -1,6 +1,5 @@
 <?php
 
-use Couchbase\User;
 
 // Autoloader function for loading classes automatically
 spl_autoload_register(function ($class_name) {
