@@ -47,8 +47,9 @@
 
 
     <div id="logout">
+    <a href="account.php"><button id='account-button'>account</button></a>
         <form method="POST">
-            <input type="submit" name="logout" value="logout">
+            <input type="submit" id="logout-button" name="logout" value="logout">
         </form>
     </div>
 
@@ -64,11 +65,11 @@
         <div id= "addgame">
             <h1>Add Game</h1>
             <div id="addgame-button"> 
-            <button>
+            <button id="addgame-button">
                 <a href="addgame.php">add game</a>
             </button>
             </div>
-            <a href="wishlist.php">wishlist</a>
+            <a href="wishlist.php"><button id='wishlist-button'>wishlist</button></a>
         </div>
 
 

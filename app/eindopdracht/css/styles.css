@@ -51,15 +51,6 @@
     margin-top: -500px;
 }
 
-/*#loginForm{*/
-
-/*    width: 200px;*/
-/*    margin-top: 10px;*/
-/*    border: solid black;*/
-/*    border-radius: 25px;*/
-/*    text-align: center;*/
-/*    padding: 10px;*/
-/*}*/
 
 #username {
     width: 400px;
@@ -84,4 +75,138 @@
     border-radius: 25px;
     text-align: center;
     padding: 10px;
+}
+
+#add-to-wishlist {
+    width: 200px;
+    margin-top: 10px;
+    border: solid black;
+    border-color: blue;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+}
+
+#delete-from-wishlist {
+    width: 200px;
+    margin-top: 10px;
+    border: solid black;
+    border-color: blue;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+}
+
+#logout-button {
+    width: 200px;
+    margin-top: 10px;
+    border: solid black;
+    border-color: blue;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+}
+
+#account-button {
+    width: 200px;
+    margin-top: 10px;
+    border: solid black;
+    border-color: blue;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+
+    #container,
+    #form-container {
+        width: 100%;
+        /* Full width for smaller screens */
+        padding: 10px;
+    }
+
+    #add-to-wishlist,
+    #delete-from-wishlist,
+    #logout-button {
+        width: 100%;
+        /* Full width for buttons */
+        margin: 10px 0;
+    }
+
+    #username,
+    #password {
+        width: 100%;
+        /* Full width for inputs */
+    }
+}
+
+/* Add responsiveness for very small screens */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        /* Smaller font size */
+    }
+
+    #container,
+    #form-container {
+        padding: 5px;
+    }
+
+    button,
+    input[type="submit"] {
+        font-size: 14px;
+        /* Smaller button text */
+    }
+}
+
+@media (max-width: 768px) {
+
+    #container,
+    #form-container {
+        width: 90%;
+        /* Adjust width for smaller screens */
+        padding: 10px;
+    }
+
+    #username,
+    #password,
+    button,
+    input[type="submit"],
+    #registreren,
+    #log-in {
+        width: 100%;
+        /* Full width for inputs and buttons */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        /* Smaller font size */
+    }
+
+    #container,
+    #form-container {
+        padding: 5px;
+    }
+
+    button,
+    input[type="submit"],
+    #username,
+    #password {
+        font-size: 14px;
+        /* Smaller text size */
+    }
+}
+
+/* Add responsiveness for tablets when screen is smaller then 1024 pixels use @media */
+
+
+@media only screen and (max-width: 768px) {
+    #libary-container {
+        width: 100%;
+        padding: 10px;
+    }
 }

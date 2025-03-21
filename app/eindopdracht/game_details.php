@@ -20,20 +20,23 @@
 <body>
 
 <!-- Formulier voor wishlist functionaliteit -->
-<div id="add-to-wishlist">
+<div id="add-to-wishlist-form">
     <form method="POST">
+      
         <!-- Verberg het game ID in een hidden input -->
         <input type="hidden" name="game_id" value="<?php echo isset($_GET['id']) ? htmlspecialchars($_GET['id']) : ''; ?>">
         <!-- Knoppen om toe te voegen of te verwijderen uit de wishlist -->
-        <input type="submit" name="add-to-wishlist" value="add to wishlist">
-        <input type="submit" name="delete-from-wishlist" value="delete from wishlist">
-        <?php
+        <input type="submit" id='add-to-wishlist' name="add-to-wishlist" value="add to wishlist">
+        <input type="submit" id='delete-from-wishlist' name="delete-from-wishlist" value="delete from wishlist">
+        
+    </form>
+
+    <?php
         // Toon wishlist link als de gebruiker is ingelogd
         if (isset($_SESSION['id'])) {
-            echo "<a href='wishlist.php'>wishlist</a>";
+            echo "<a href='wishlist.php'><button id='wishlist-button'>wishlist</button></a>";
         }
         ?>
-    </form>
 </div>
 
 <!-- Terugknop naar de indexpagina -->
